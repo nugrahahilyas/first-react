@@ -15,6 +15,10 @@
       const app = document.getElementById("app");
 
       // you can add this function to component
+      function clickHandler() {
+        console.log("clicked");
+      }
+
       function createTitle(title) {
         if (title) {
           return title;
@@ -29,11 +33,17 @@
       }
 
       function HomePage() {
+        const names = ["Hilyas", "Riza", "Nugraha"];
         return (
           <div>
-            {console.log("tes")}
             <Header title="" />
             <Header title="My First ReactJS" />
+            <ul>
+              {names.map((name) => (
+                <li key={name}> {name} </li>
+              ))}
+            </ul>
+            <button onClick={clickHandler}>Like () </button>
           </div>
         );
       }
